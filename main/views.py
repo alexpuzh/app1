@@ -4,16 +4,20 @@ from django.shortcuts import HttpResponse
 
 def index(request):
     context = {
-        'title': 'Home',
-        'content': 'Главная страница',
-        'list': ['first', 'second'],
-        'dict': {'first': 1},
-        'is_authenticated': False
+        'title': 'Home - Главная',
+        'content': 'Магазин мебели HOME',
+
     }
     return render(request, 'main/index.html', context)
 
 
 def about(request) -> HttpResponse:
-    return HttpResponse("About page")
+    context = {
+        'title': 'Home - О нас',
+        'content': 'О нас',
+        'text_on_page': 'Текст который описывает магазин'
+
+    }
+    return render(request, 'main/about.html', context)
 
 
